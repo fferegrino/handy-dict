@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "handy-dict"
+version = "0.0.0"
+description = "Some handy tools for dictionaries"
+authors = ["Antonio Feregrino <antonio.feregrino@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+nbdev = "^0.2.16"
+jupyter = "^1.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
