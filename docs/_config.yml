@@ -60,5 +60,5 @@ sidebars:
 - home_sidebar
 permalink: pretty
 
-theme: jekyll-theme-merlot
+theme: jekyll-theme-cayman
 baseurl: /handy_dict
