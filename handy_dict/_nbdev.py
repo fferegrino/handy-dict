@@ -11,7 +11,7 @@ modules = ["exceptions.py",
            "apply_keyed.py",
            "return_keyed.py"]
 
-doc_url = "https://fferegrino.github.io/handy_dict"
+doc_url = "https://fferegrino.github.io/handy-dict"
 
 git_url = "https://github.com/fferegrino/handy_dict/tree/master/"
 
