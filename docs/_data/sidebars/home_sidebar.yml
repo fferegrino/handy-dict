@@ -13,7 +13,13 @@ entries:
       title: handy-dict
       url: /core
     - output: web,pdf
+      title: Exceptions
+      url: /exceptions
+    - output: web,pdf
       title: Title
+      url: /apply_keyed
+    - output: web,pdf
+      title: Return Keyed
       url: /return_keyed
     output: web
     title: handy_dict
