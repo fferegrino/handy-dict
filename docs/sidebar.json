@@ -4,6 +4,7 @@
     "handy-dict": "/core",
     "Exceptions": "/exceptions",
     "Title": "/apply_keyed",
-    "Return Keyed": "/return_keyed"
+    "Return Keyed": "/return_keyed",
+    "HandyDict": "/handy_dict"
   }
 }

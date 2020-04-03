@@ -5,12 +5,14 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 index = {"KeyedException": "01_exceptions.ipynb",
          "ApplyKeyedException": "01_exceptions.ipynb",
          "apply_keyed": "02_apply_keyed.ipynb",
-         "return_keyed": "03_return_keyed.ipynb"}
+         "return_keyed": "03_return_keyed.ipynb",
+         "HandyDict": "04_handy_dict.ipynb"}
 
 modules = ["__init__.py",
            "exceptions.py",
            "apply_keyed.py",
-           "return_keyed.py"]
+           "return_keyed.py",
+           "core.py"]
 
 doc_url = "https://fferegrino.github.io/handy-dict"
 

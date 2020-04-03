@@ -5,8 +5,8 @@ title: Handy Dict
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Summary description here."
-description: "Summary description here."
+summary: "A library with some handy utils to deal wit"
+description: "A library with some handy utils to deal wit"
 ---
 <!--
 
@@ -118,23 +118,7 @@ description: "Summary description here."
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>With <em>handy-dict</em> you can apply a function to the keys inside a dictionary, say you want to take <code>name</code> out of <code>stat</code>,  go from something like this:</p>
-<div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;base_stat&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-  <span class="nt">&quot;effort&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;stat&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;special-defense&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://pokeapi.co/api/v2/stat/5/&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-<p>to this:</p>
-<div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;base_stat&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;special-defense&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<h3 id="apply_keyed"><a href="/handy-dictapply_keyed"><code>apply_keyed</code></a><a class="anchor-link" href="#apply_keyed"> </a></h3>
 </div>
 </div>
 </div>
@@ -155,6 +139,29 @@ description: "Summary description here."
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With <em>handy-dict</em> you can apply a function to the keys inside a dictionary, say you want to take <code>name</code> out of <code>stat</code>,  go from something like this:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;base_stat&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+  <span class="nt">&quot;effort&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nt">&quot;stat&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;special-defense&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://pokeapi.co/api/v2/stat/5/&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>to this:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;base_stat&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;special-defense&quot;</span>
+<span class="p">}</span>
+</pre></div>
+<p>The function <code>transform_stat</code> is just a little helper that will transform the <code>stats</code> array in our <code>pikachu</code> dictionary and return a new array, that will replace the <code>stats</code> in a copy of the original dict:</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -163,10 +170,10 @@ description: "Summary description here."
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">transform_stat</span><span class="p">(</span><span class="n">stat_array</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">[{</span>
-        <span class="s2">&quot;base_stat&quot;</span><span class="p">:</span> <span class="n">stat</span><span class="p">[</span><span class="s2">&quot;base_stat&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">stat</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
-    <span class="p">}</span> <span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="n">stat_array</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">stat</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]:</span> <span class="n">stat</span><span class="p">[</span><span class="s2">&quot;base_stat&quot;</span><span class="p">]</span> 
+        <span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="n">stat_array</span> 
+    <span class="p">}</span> 
 </pre></div>
 
     </div>
@@ -199,10 +206,70 @@ description: "Summary description here."
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[{&#39;base_stat&#39;: 90, &#39;name&#39;: &#39;speed&#39;},
- {&#39;base_stat&#39;: 50, &#39;name&#39;: &#39;special-defense&#39;},
- {&#39;base_stat&#39;: 50, &#39;name&#39;: &#39;special-attack&#39;},
- {&#39;base_stat&#39;: 40, &#39;name&#39;: &#39;defense&#39;}]</pre>
+<pre>{&#39;speed&#39;: 90, &#39;special-defense&#39;: 50}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="return_keyed"><a href="/handy-dictreturn_keyed"><code>return_keyed</code></a><a class="anchor-link" href="#return_keyed"> </a></h3>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">handy_dict</span> <span class="kn">import</span> <span class="n">return_keyed</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>handy-dict</em> also makes it easy to return multiple values from a dictionary, iterating through keys and arrays:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">return_keyed</span><span class="p">(</span><span class="n">pikachu</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;moves&quot;</span><span class="p">,</span><span class="s2">&quot;move&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;mega-punch&#39;, &#39;pay-day&#39;, &#39;thunder-punch&#39;]</pre>
 </div>
 
 </div>
