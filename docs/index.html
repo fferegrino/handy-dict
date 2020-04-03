@@ -1,6 +1,6 @@
 ---
 
-title: Project name here
+title: Handy Dict
 
 keywords: fastai
 sidebar: home_sidebar
@@ -55,7 +55,85 @@ description: "Summary description here."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Fill me in please! Don't forget code examples:</p>
+<h3 id="Let's-start-with-a-dictionary">Let's start with a dictionary<a class="anchor-link" href="#Let's-start-with-a-dictionary"> </a></h3>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pikachu</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;pikachu&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;moves&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;move&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;mega-punch&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://pokeapi.co/api/v2/move/5/&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;move&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;pay-day&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://pokeapi.co/api/v2/move/6/&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;move&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;thunder-punch&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://pokeapi.co/api/v2/move/9/&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;stats&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;base_stat&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+      <span class="s2">&quot;effort&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">&quot;stat&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;speed&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://pokeapi.co/api/v2/stat/6/&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;base_stat&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+      <span class="s2">&quot;effort&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;stat&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;special-defense&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://pokeapi.co/api/v2/stat/5/&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With <em>handy-dict</em> you can apply a function to the keys inside a dictionary, say you want to take <code>name</code> out of <code>stat</code>,  go from something like this:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;base_stat&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+  <span class="nt">&quot;effort&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nt">&quot;stat&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;special-defense&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://pokeapi.co/api/v2/stat/5/&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>to this:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;base_stat&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;special-defense&quot;</span>
+<span class="p">}</span>
+</pre></div>
 
 </div>
 </div>
@@ -67,7 +145,46 @@ description: "Summary description here."
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">handy_dict</span> <span class="kn">import</span> <span class="n">apply_keyed</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">transform_stat</span><span class="p">(</span><span class="n">stat_array</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[{</span>
+        <span class="s2">&quot;base_stat&quot;</span><span class="p">:</span> <span class="n">stat</span><span class="p">[</span><span class="s2">&quot;base_stat&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">stat</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+    <span class="p">}</span> <span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="n">stat_array</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">modified_pikachu</span> <span class="o">=</span> <span class="n">apply_keyed</span><span class="p">(</span><span class="n">pikachu</span><span class="p">,[</span><span class="s2">&quot;stats&quot;</span><span class="p">],</span> <span class="n">transform_stat</span><span class="p">)</span>
+<span class="n">modified_pikachu</span><span class="p">[</span><span class="s2">&quot;stats&quot;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -82,7 +199,10 @@ description: "Summary description here."
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
+<pre>[{&#39;base_stat&#39;: 90, &#39;name&#39;: &#39;speed&#39;},
+ {&#39;base_stat&#39;: 50, &#39;name&#39;: &#39;special-defense&#39;},
+ {&#39;base_stat&#39;: 50, &#39;name&#39;: &#39;special-attack&#39;},
+ {&#39;base_stat&#39;: 40, &#39;name&#39;: &#39;defense&#39;}]</pre>
 </div>
 
 </div>

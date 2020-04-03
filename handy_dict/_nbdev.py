@@ -7,7 +7,8 @@ index = {"KeyedException": "01_exceptions.ipynb",
          "apply_keyed": "02_apply_keyed.ipynb",
          "return_keyed": "03_return_keyed.ipynb"}
 
-modules = ["exceptions.py",
+modules = ["__init__.py",
+           "exceptions.py",
            "apply_keyed.py",
            "return_keyed.py"]
 
