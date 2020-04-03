@@ -1,5 +1,8 @@
 SRC = $(wildcard ./*.ipynb)
 
+POETRY=poetry
+POETRY_RUN=$(POETRY) run
+
 BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
 HASH := $(shell git rev-parse HEAD)
 TAG := $(shell git tag -l --contains HEAD)
@@ -7,27 +10,27 @@ TAG := $(shell git tag -l --contains HEAD)
 all: handy_dict docs
 
 handy_dict: $(SRC)
-	nbdev_build_lib
+	$(POETRY_RUN) nbdev_build_lib
 	touch handy_dict
 
 docs_serve: docs
 	cd docs && bundle exec jekyll serve
 
 docs: $(SRC)
-	nbdev_build_docs
+	$(POETRY_RUN) nbdev_build_docs
 	touch docs
 
 test:
-	nbdev_test_nbs
+	$(POETRY_RUN) nbdev_test_nbs
 
 release: pypi
-	nbdev_bump_version
+	$(POETRY_RUN) nbdev_bump_version
 
 pypi: dist
-	twine upload --repository pypi dist/*
+	$(POETRY_RUN) twine upload --repository pypi dist/*
 
 dist: clean
-	python setup.py sdist bdist_wheel
+	$(POETRY_RUN) python setup.py sdist bdist_wheel
 
 clean:
 	rm -rf dist
@@ -54,3 +57,10 @@ minor: check_on_master
 major: check_on_master
 	$(POETRY_RUN) bumpversion major --verbose
 	git push --follow-tags
+
+publish:
+ifeq ($(TAG),)
+	@echo "Skipping PyPi publishing"
+else
+	twine upload --repository pypi dist/*
+endif
