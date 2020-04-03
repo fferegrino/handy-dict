@@ -21,6 +21,9 @@ entries:
     - output: web,pdf
       title: Return Keyed
       url: /return_keyed
+    - output: web,pdf
+      title: HandyDict
+      url: /handy_dict
     output: web
     title: handy_dict
   output: web

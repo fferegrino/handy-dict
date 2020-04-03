@@ -1,5 +1,5 @@
 # Handy Dict
-> Summary description here.
+> A library with some handy utils to deal wit
 
 
 This file will become your README and also the index of your documentation.
@@ -56,6 +56,12 @@ pikachu = {
 }
 ```
 
+### `apply_keyed`
+
+```python
+from handy_dict import apply_keyed
+```
+
 With *handy-dict* you can apply a function to the keys inside a dictionary, say you want to take `name` out of `stat`,  go from something like this:
 
 ```json
@@ -78,16 +84,14 @@ to this:
 }
 ```
 
-```python
-from handy_dict import apply_keyed
-```
+The function `transform_stat` is just a little helper that will transform the `stats` array in our `pikachu` dictionary and return a new array, that will replace the `stats` in a copy of the original dict:
 
 ```python
 def transform_stat(stat_array):
-    return [{
-        "base_stat": stat["base_stat"],
-        "name": stat["stat"]["name"]
-    } for stat in stat_array]
+    return {
+        stat["stat"]["name"]: stat["base_stat"] 
+        for stat in stat_array 
+    } 
 ```
 
 ```python
@@ -98,9 +102,25 @@ modified_pikachu["stats"]
 
 
 
-    [{'base_stat': 90, 'name': 'speed'},
-     {'base_stat': 50, 'name': 'special-defense'},
-     {'base_stat': 50, 'name': 'special-attack'},
-     {'base_stat': 40, 'name': 'defense'}]
+    {'speed': 90, 'special-defense': 50}
+
+
+
+### `return_keyed`
+
+```python
+from handy_dict import return_keyed
+```
+
+*handy-dict* also makes it easy to return multiple values from a dictionary, iterating through keys and arrays:
+
+```python
+return_keyed(pikachu, ["moves","move","name"])
+```
+
+
+
+
+    ['mega-punch', 'pay-day', 'thunder-punch']
 
 
