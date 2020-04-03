@@ -62,7 +62,7 @@ jobs:
 
     - name: Publish to PyPI
       run: |
-        source $HOME/.poetry/env
-        export TWINE_USERNAME=${{ secrets.PYPIUSER }}
-        export TWINE_PASSWORD=${{ secrets.PYPIPASS }}
+        echo "[pypi]" >> ~/.pypirc
+        echo "username = ${{ secrets.PYPIUSER }}" >> ~/.pypirc
+        echo "password = ${{ secrets.PYPIPASS }}" >> ~/.pypirc
         make publish
