@@ -63,6 +63,6 @@ jobs:
     - name: Publish to PyPI
       run: |
         echo "[pypi]" >> ~/.pypirc
-        echo "username = ${{ secrets.PYPIUSER }}" >> ~/.pypirc
-        echo "password = ${{ secrets.PYPIPASS }}" >> ~/.pypirc
+        echo "username = ${{ secrets.TWINE_USERNAME }}" >> ~/.pypirc
+        echo "password = ${{ secrets.TWINE_PASSWORD }}" >> ~/.pypirc
         make publish
