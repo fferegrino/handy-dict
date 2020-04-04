@@ -7,3 +7,6 @@ from .apply_keyed import apply_keyed
 
 # Internal Cell
 from .return_keyed import return_keyed
+
+# Internal Cell
+from .core import HandyDict

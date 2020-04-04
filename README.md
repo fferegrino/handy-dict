@@ -1,5 +1,5 @@
 # Handy Dict
-> A library with some handy utils to deal wit
+> A library with some handy utils to deal with dictionaries that contain arrays
 
 
 This file will become your README and also the index of your documentation.
