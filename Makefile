@@ -62,5 +62,5 @@ publish:
 ifeq ($(TAG),)
 	@echo "Skipping PyPi publishing"
 else
-	twine upload --repository pypi dist/*
+	twine upload --skip-existing --repository pypi dist/*
 endif
