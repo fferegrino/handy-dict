@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "handy-dict"
-version = "0.0.7-dev"
+version = "0.1.0-dev"
 description = "Some handy tools for dictionaries"
 authors = ["Antonio Feregrino <antonio.feregrino@gmail.com>"]
 license = "MIT"
