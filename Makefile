@@ -11,7 +11,6 @@ all: handy_dict docs
 
 handy_dict: $(SRC)
 	$(POETRY_RUN) nbdev_build_lib
-	touch handy_dict
 
 docs_serve: docs
 	cd docs && bundle exec jekyll serve
