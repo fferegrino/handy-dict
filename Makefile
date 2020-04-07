@@ -22,15 +22,6 @@ docs: $(SRC)
 test:
 	$(POETRY_RUN) nbdev_test_nbs
 
-release: pypi
-	$(POETRY_RUN) nbdev_bump_version
-
-pypi: dist
-	$(POETRY_RUN) twine upload --repository pypi dist/*
-
-dist: clean
-	$(POETRY_RUN) python setup.py sdist bdist_wheel
-
 clean:
 	rm -rf dist
 
