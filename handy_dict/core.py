@@ -5,6 +5,11 @@ __all__ = ['HandyDict']
 # Internal Cell
 from collections import UserDict
 
+# Internal Cell
+from .apply_keyed import apply_keyed
+from .return_keyed import return_keyed
+from .multi_get import multi_get
+
 # Cell
 class HandyDict(UserDict):
 
@@ -16,3 +21,8 @@ class HandyDict(UserDict):
 
     def apply(self, keys, action, ignore_non_existing=True):
         return HandyDict(apply_keyed(self.data, keys, action, ignore_non_existing))
+
+    def multi_get(self, keys, default=None):
+        if not isinstance(keys, list):
+            keys = [keys]
+        return multi_get(self.data, keys, default=default)
