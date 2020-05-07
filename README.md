@@ -12,7 +12,7 @@ This file will become your README and also the index of your documentation.
 
 ### Let's start with a dictionary
 
-```python
+```
 pikachu = {
   "name": "pikachu",
   "moves": [
@@ -58,7 +58,7 @@ pikachu = {
 
 ### `apply_keyed`
 
-```python
+```
 from handy_dict import apply_keyed
 ```
 
@@ -86,7 +86,7 @@ to this:
 
 The function `transform_stat` is just a little helper that will transform the `stats` array in our `pikachu` dictionary and return a new array, that will replace the `stats` in a copy of the original dict:
 
-```python
+```
 def transform_stat(stat_array):
     return {
         stat["stat"]["name"]: stat["base_stat"] 
@@ -94,7 +94,7 @@ def transform_stat(stat_array):
     } 
 ```
 
-```python
+```
 modified_pikachu = apply_keyed(pikachu,["stats"], transform_stat)
 modified_pikachu["stats"]
 ```
@@ -108,13 +108,13 @@ modified_pikachu["stats"]
 
 ### `return_keyed`
 
-```python
+```
 from handy_dict import return_keyed
 ```
 
 *handy-dict* also makes it easy to return multiple values from a dictionary, iterating through keys and arrays:
 
-```python
+```
 return_keyed(pikachu, ["moves","move","name"])
 ```
 
