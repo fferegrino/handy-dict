@@ -2,9 +2,9 @@
   "handy_dict": {
     "Overview": "/",
     "handy-dict": "/core",
+    "HandyDict": "/handy_dict",
     "Exceptions": "/exceptions",
-    "Title": "/apply_keyed",
-    "Return Keyed": "/return_keyed",
-    "HandyDict": "/handy_dict"
+    "Title": "/multi_get",
+    "Return Keyed": "/return_keyed"
   }
 }

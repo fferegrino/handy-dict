@@ -9,4 +9,7 @@ from .apply_keyed import apply_keyed
 from .return_keyed import return_keyed
 
 # Internal Cell
+from .multi_get import multi_get
+
+# Internal Cell
 from .core import HandyDict

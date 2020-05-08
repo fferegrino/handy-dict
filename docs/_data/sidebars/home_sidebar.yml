@@ -13,17 +13,17 @@ entries:
       title: handy-dict
       url: /core
     - output: web,pdf
+      title: HandyDict
+      url: /handy_dict
+    - output: web,pdf
       title: Exceptions
       url: /exceptions
     - output: web,pdf
       title: Title
-      url: /apply_keyed
+      url: /multi_get
     - output: web,pdf
       title: Return Keyed
       url: /return_keyed
-    - output: web,pdf
-      title: HandyDict
-      url: /handy_dict
     output: web
     title: handy_dict
   output: web
